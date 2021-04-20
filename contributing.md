@@ -19,6 +19,7 @@ It simplifies and deprecates [this](https://docs.google.com/document/d/1e-i4dgLk
 * You need a git account and request [here](https://operations.devfactory.com/servicedesk/customer/portal/20) access to [Git](https://github.com/trilogy-group/) and [Jira](https://jira.devfactory.com/). If you need to create Jira Epics in Jira (for new features), you will need to be granted the Jira “PM” role, ask for that explicitly.
 * You need to identify the product and its repos you want to contribute to. You can find the list of products [here](https://docs.google.com/spreadsheets/d/1fbwvBic1Xj4N5daYJKc80dJMy8opm-Y-qyfygdNIUmg/edit#gid=2) and using the product names you can search for repos in the [Trilogy Github account](https://github.com/trilogy-group).
 * You need product-specific build and deploy instructions. We are working to have 1-click environments for all products, [this](https://docs.google.com/spreadsheets/d/108tfMgiDCeeG6jT1IK6NYvkeMBfxZvTo1rjpNxFdYAM/edit#gid=0) list is continuously updated.
+* You should read our [architecture standards](https://docs.google.com/document/d/1ghmU73gzQFl_YYdoxiklbBhg7FP49XY2xYgja4sfOwE/edit#) and [implementation standards](https://docs.google.com/document/d/18AVP3_Vsrjrra-MZJIEx2G_h4JjiaMJdaawa2eLDPiE/edit#). We are strictly enforcing these standards on new products we started building in Q1 2021, for older products you may find these standards to be only informative, not normative. 
 
 ## What is accepted as a contribution: ##
 
