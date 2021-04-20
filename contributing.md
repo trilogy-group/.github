@@ -47,9 +47,9 @@ This is entirely up to you.
 * **Instructions:**
   * Write small PRs because they are easier and safer to test, review and release, carrying a lower regresion risk.
   * We also need to understand why you are submitting this contribution. As part of the PR, provide the following:
-   * a link to the central Jira defect you are fixing or the feature/enhancement you are building. 
-   * explain how the product will work differently once your contribution is merged, compare and contrast the new behavior with the existing behavior.
-   * create or update the product’s README.md with important changes to the product architecture, user interfaces, environment variables, exposed ports, file locations and container parameters.
+    * a link to the central Jira defect you are fixing or the feature/enhancement you are building. 
+    * explain how the product will work differently once your contribution is merged, compare and contrast the new behavior with the existing behavior.
+    * create or update the product’s README.md with important changes to the product architecture, user interfaces, environment variables, exposed ports, file locations and container parameters.
 * **What to do if you fail:**
   * Break down your code into multiple PRs that can be tested, reviewed and merged independently.
   * Follow the feedback provided by the reviewer and resubmit your PR.
