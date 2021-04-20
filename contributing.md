@@ -16,9 +16,9 @@ It simplifies and deprecates [this](https://docs.google.com/document/d/1e-i4dgLk
 
 ## What do you need to do before your first contribution: ##
 
-You need a git account and request [here](https://operations.devfactory.com/servicedesk/customer/portal/20) access to [Git](https://github.com/trilogy-group/) and [Jira](https://jira.devfactory.com/). If you need to create Jira Epics in Jira (for new features), you will need to be granted the Jira “PM” role, ask for that explicitly.
-You need to identify the product and its repos you want to contribute to. You can find the list of products [here](https://docs.google.com/spreadsheets/d/1fbwvBic1Xj4N5daYJKc80dJMy8opm-Y-qyfygdNIUmg/edit#gid=2) and using the product names you can search for repos in the [Trilogy Github account](https://github.com/trilogy-group).
-You need product-specific build and deploy instructions. We are working to have 1-click environments for all products, [this](https://docs.google.com/spreadsheets/d/108tfMgiDCeeG6jT1IK6NYvkeMBfxZvTo1rjpNxFdYAM/edit#gid=0) list is continuously updated.
+* You need a git account and request [here](https://operations.devfactory.com/servicedesk/customer/portal/20) access to [Git](https://github.com/trilogy-group/) and [Jira](https://jira.devfactory.com/). If you need to create Jira Epics in Jira (for new features), you will need to be granted the Jira “PM” role, ask for that explicitly.
+* You need to identify the product and its repos you want to contribute to. You can find the list of products [here](https://docs.google.com/spreadsheets/d/1fbwvBic1Xj4N5daYJKc80dJMy8opm-Y-qyfygdNIUmg/edit#gid=2) and using the product names you can search for repos in the [Trilogy Github account](https://github.com/trilogy-group).
+* You need product-specific build and deploy instructions. We are working to have 1-click environments for all products, [this](https://docs.google.com/spreadsheets/d/108tfMgiDCeeG6jT1IK6NYvkeMBfxZvTo1rjpNxFdYAM/edit#gid=0) list is continuously updated.
 
 ## What is accepted as a contribution: ##
 
