@@ -1,5 +1,5 @@
 {
   "name": "Only TypeScript Files Allowed",
   "description": "Reject pull request that has modified js files",
-  "iconName": "File_Typescript"
+  "iconName": "typescript"
 }
