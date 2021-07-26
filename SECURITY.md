@@ -1,4 +1,1 @@
-Please report (suspected) security vulnerabilities to
-**[security@trilogy.com](mailto:security@trilogy.com)**. You will receive a response from
-us within 48 hours. If the issue is confirmed, we will release a patch as soon
-as possible.
+To report a security issue, please email **[security@trilogy.com](mailto:security@trilogy.com)** with a description of the issue, the steps you took to create the issue, affected versions, and, if known, mitigations for the issue. Our Security team will respond within 3 working days of your email. If the issue is confirmed as a vulnerability, we will open a Security Advisory. This project follows a 90 day disclosure timeline.
