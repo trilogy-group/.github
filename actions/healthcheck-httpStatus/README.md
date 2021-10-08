@@ -18,7 +18,7 @@ steps:
       # Retry all errors, including 404. This option might trigger curl upgrade.
       retry-all: no # Optional, defaults to "no"
       # timeout. <seconds> Maximum time allowed for connection
-      timeout: 30 # Optional, defaults to "no"
+      timeout: 30 # Optional, defaults to 30
 ```
 
 The action will fail if any of the URLs reports either 4xx or 5xx status codes.

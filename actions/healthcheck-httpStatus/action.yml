@@ -27,7 +27,7 @@ inputs:
     description: |
       <seconds> Maximum time allowed for connection
     required: false
-    default: "false"
+    default: "30"
 branding:
   icon: check
   color: purple
