@@ -1,6 +1,6 @@
-# Hello world docker action
+# healthcheck-httpStatus
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+This action checks the URL endpoint.
 
 ## Inputs
 
