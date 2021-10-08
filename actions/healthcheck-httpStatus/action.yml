@@ -1,0 +1,15 @@
+# action.yml
+name: 'Hello World'
+description: 'Greet someone and record the time'
+inputs:
+  url:  # id of input
+    description: 'URL to test'
+    required: true
+  credentials:
+    description: 'basic authentication credentials'
+    required: false
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.url }}
