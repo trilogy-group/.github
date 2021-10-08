@@ -5258,7 +5258,7 @@ var semver = __nccwpck_require__(1383);
 
 async function curl(
   url,
-  { maxAttempts, retryDelaySeconds, retryAll, followRedirect }
+  { maxAttempts, retryDelaySeconds, retryAll, followRedirect, timeOut }
 ) {
   const options = ["--fail", "-sv"];
   if (maxAttempts > 1) {
@@ -5275,6 +5275,10 @@ async function curl(
   }
   if (retryAll) {
     options.push("--retry-all-errors");
+  }
+
+  if (timeOut) {
+    options.push("--connect-timeout", timeOut);
   }
 
   options.push(url);
@@ -5338,6 +5342,7 @@ async function upgrade() {
 async function run() {
   const urlString = core.getInput("url", { required: true });
   const maxAttemptsString = core.getInput("max-attempts");
+  const timeoutString = core.getInput("timeout");
   const retryDelay = core.getInput("retry-delay");
   const followRedirect = core.getBooleanInput("follow-redirect");
   const retryAll = core.getBooleanInput("retry-all");
@@ -5345,6 +5350,7 @@ async function run() {
   const urls = urlString.split("|");
   const retryDelaySeconds = duration_default().parse(retryDelay).seconds();
   const maxAttempts = parseInt(maxAttemptsString);
+  const timeout = parseInt(timeoutString);
 
   if (retryAll) {
     const isUpToDate = await isVersion("7.71.0");
@@ -5363,9 +5369,10 @@ async function run() {
     // wait for all of them anyway
     await curl(url, {
       maxAttempts,
-      retryDelaySeconds,
+      retryDelaySeconds,      
       retryAll,
       followRedirect,
+      timeout
     });
   }
 
