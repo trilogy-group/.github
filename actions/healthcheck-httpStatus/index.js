@@ -17,7 +17,7 @@ async function run() {
   const urls = urlString.split("|");
   const retryDelaySeconds = duration.parse(retryDelay).seconds();
   const maxAttempts = parseInt(maxAttemptsString);
-  const timeout = parseInt(timeoutString);
+  const timeout = duration.parse(timeoutString).seconds();
 
   if (retryAll) {
     const isUpToDate = await isCurlVersion("7.71.0");
