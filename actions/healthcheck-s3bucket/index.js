@@ -30,7 +30,7 @@ const run = async () => {
     }
   } catch (err) {
     console.log("Error", err);
-    core.setFailed(e.message + "\n Failed to upload file to: " + bucketParams.Bucket);
+    core.setFailed(err.message + "\n Failed to upload file to: " + bucketParams.Bucket);
   }
 };
 run();
