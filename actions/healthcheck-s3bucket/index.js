@@ -1,7 +1,7 @@
-import * as core from "@actions/core";
-import { PutObjectCommand } from "@aws-sdk/client-s3";
-import { s3Client } from "./libs/s3Client.js"; // Helper function that creates Amazon S3 service client module.
-
+const core = require('@actions/core');
+const github = require('@actions/github');
+const { PutObjectCommand } = require("@aws-sdk/client-s3");
+const { s3Client } = require("./libs/s3Client.js"); // Helper function that creates Amazon S3 service client module.
 
 
 const s3BucketString = core.getInput("bucket-names", { required: true });
