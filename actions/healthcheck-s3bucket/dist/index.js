@@ -36832,14 +36832,6 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ 9126:
-/***/ ((module) => {
-
-module.exports = eval("require")("./libs/s3Client.js");
-
-
-/***/ }),
-
 /***/ 2978:
 /***/ ((module) => {
 
@@ -37081,35 +37073,6 @@ module.exports = require("util");
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__nccwpck_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__nccwpck_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/define property getters */
-/******/ 	(() => {
-/******/ 		// define getter functions for harmony exports
-/******/ 		__nccwpck_require__.d = (exports, definition) => {
-/******/ 			for(var key in definition) {
-/******/ 				if(__nccwpck_require__.o(definition, key) && !__nccwpck_require__.o(exports, key)) {
-/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
-/******/ 				}
-/******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
-/******/ 	(() => {
-/******/ 		__nccwpck_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -37130,20 +37093,40 @@ var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
 "use strict";
+// ESM COMPAT FLAG
 __nccwpck_require__.r(__webpack_exports__);
-/* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_0__ = __nccwpck_require__(8021);
-/* harmony import */ var _actions_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__nccwpck_require__.n(_actions_core__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _aws_sdk_client_s3__WEBPACK_IMPORTED_MODULE_2__ = __nccwpck_require__(487);
-/* harmony import */ var _aws_sdk_client_s3__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__nccwpck_require__.n(_aws_sdk_client_s3__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _libs_s3Client_js__WEBPACK_IMPORTED_MODULE_1__ = __nccwpck_require__(9126);
-/* harmony import */ var _libs_s3Client_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__nccwpck_require__.n(_libs_s3Client_js__WEBPACK_IMPORTED_MODULE_1__);
+
+// EXTERNAL MODULE: ./node_modules/@actions/core/lib/core.js
+var core = __nccwpck_require__(8021);
+// EXTERNAL MODULE: ./node_modules/@aws-sdk/client-s3/dist-cjs/index.js
+var dist_cjs = __nccwpck_require__(487);
+;// CONCATENATED MODULE: ./libs/s3Client.js
+/* Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+SPDX-License-Identifier: Apache-2.0
+ABOUT THIS NODE.JS EXAMPLE: This example works with AWS SDK for JavaScript version 3 (v3),
+which is available at https://github.com/aws/aws-sdk-js-v3. This example is in the 'AWS SDK for JavaScript v3 Developer Guide' at
+https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/s3-example-creating-buckets.html.
+Purpose:
+s3Client.js is a helper function that creates an Amazon Simple Storage Service (Amazon S3) service client.
+Inputs (replace in code):
+*/
+// snippet-start:[s3.JavaScript.buckets.createclientv3]
+// Create service client module using ES6 syntax.
+
+// Set the AWS Region.
+const REGION = "REGION"; //e.g. "us-east-1"
+// Create an Amazon S3 service client object.
+const s3Client = new dist_cjs.S3Client({ region: REGION });
+
+// snippet-end:[s3.JavaScript.buckets.createclientv3]
+;// CONCATENATED MODULE: ./index.js
 
 
  // Helper function that creates Amazon S3 service client module.
 
 
 
-const s3BucketString = _actions_core__WEBPACK_IMPORTED_MODULE_0__.getInput("bucket-names", { required: true });
+const s3BucketString = core.getInput("bucket-names", { required: true });
 const s3Buckets = urlString.split("|");
 
 // Create and upload the object to the specified Amazon S3 bucket.
@@ -37157,8 +37140,8 @@ const run = async () => {
         // Content of the new object.
         Body: "Healtcheck successful. This file can be deleted",
       };
-      const data = await _libs_s3Client_js__WEBPACK_IMPORTED_MODULE_1__.s3Client.send(new _aws_sdk_client_s3__WEBPACK_IMPORTED_MODULE_2__.PutObjectCommand(bucketParams));
-      _actions_core__WEBPACK_IMPORTED_MODULE_0__.info(bucketParams.Bucket + " Success");
+      const data = await s3Client.send(new dist_cjs.PutObjectCommand(bucketParams));
+      core.info(bucketParams.Bucket + " Success");
       console.log(
         "Successfully uploaded object: " +
           bucketParams.Bucket +
@@ -37169,7 +37152,7 @@ const run = async () => {
     }
   } catch (err) {
     console.log("Error", err);
-    _actions_core__WEBPACK_IMPORTED_MODULE_0__.setFailed(e.message + "\n Failed to upload file to: " + bucketParams.Bucket);
+    core.setFailed(e.message + "\n Failed to upload file to: " + bucketParams.Bucket);
   }
 };
 run();
