@@ -7,4 +7,4 @@ inputs:
     default: 'bucket1|bucket2'
 runs:
   using: 'node12'
-  main: 'index.js'
+  main: 'dist/index.js'
