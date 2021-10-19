@@ -3,7 +3,7 @@ const { s3Client } = require("./libs/s3Client.js"); // Helper function that crea
 
 
 const s3BucketString = core.getInput("bucket-names", { required: true });
-const s3Buckets = urlString.split("|");
+const s3Buckets = s3BucketString.split("|");
 
 // Create and upload the object to the specified Amazon S3 bucket.
 const run = async () => {
