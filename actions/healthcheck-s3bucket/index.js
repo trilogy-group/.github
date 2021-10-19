@@ -1,5 +1,3 @@
-const core = require('@actions/core');
-const github = require('@actions/github');
 const { PutObjectCommand } = require("@aws-sdk/client-s3");
 const { s3Client } = require("./libs/s3Client.js"); // Helper function that creates Amazon S3 service client module.
 
