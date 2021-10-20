@@ -37114,7 +37114,7 @@ Inputs (replace in code):
 // Create service client module using ES6 syntax.
 
 // Set the AWS Region.
-const REGION = "REGION"; //e.g. "us-east-1"
+const REGION = process.env.AWS_REGION; //e.g. "us-east-1"
 // Create an Amazon S3 service client object.
 const s3Client = new dist_cjs.S3Client({ region: REGION });
 
